@@ -20,17 +20,16 @@
 
 ## items table
 
-| Column           | Type       | Options           |
-| ---------------- | ---------- | ----------------- |
-| image            |            | null: false       |
-| item_name        | string     | null: false       |
-| item_description | text       | null: false       |
-| category         | string     | null: false       |
-| condition        | string     | null: false       |
-| shipping_charge  | string     | null: false       |
-| item_prefecture  | string     | null: false       |
-| dispatch_timing  | string     | null: false       |
-| user             | references | foreign_key: true |
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| item_name          | string     | null: false       |
+| item_description   | text       | null: false       |
+| category_id        | string     | null: false       |
+| condition_id       | string     | null: false       |
+| shipping_charge_id | string     | null: false       |
+| item_prefecture_id | string     | null: false       |
+| dispatch_timing_id | string     | null: false       |
+| user               | references | foreign_key: true |
 
 ### Association
 
