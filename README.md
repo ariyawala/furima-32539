@@ -38,6 +38,18 @@
 
 ## orders table
 
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| item   | references | foreign_key: true |
+
+### Association
+
+- belongs_to : item
+- belongs_to : user
+
+## addresses table
+
 | Column     | Type   | Options     |
 | ---------- | ------ | ----------- |
 | zip        | string | null: false |
@@ -49,5 +61,4 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to :item
+- belongs_to :order
