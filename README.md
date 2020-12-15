@@ -28,7 +28,7 @@
 | category_id        | integer    | null: false       |
 | condition_id       | integer    | null: false       |
 | shipping_charge_id | integer    | null: false       |
-| item_prefecture_id | integer    | null: false       |
+| prefecture_id      | integer    | null: false       |
 | dispatch_timing_id | integer    | null: false       |
 | user               | references | foreign_key: true |
 
@@ -52,15 +52,15 @@
 
 ## addresses table
 
-| Column     | Type       | Options           |
-| ---------- | ---------- | ----------------- |
-| zip        | string     | null: false       |
-| prefecture | integer    | null: false       |
-| city       | string     | null: false       |
-| address    | string     | null: false       |
-| building   | string     |                   |
-| phone_no   | string     | null: false       |
-| order      | references | foreign_key: true |
+| Column        | Type       | Options           |
+| ------------- | ---------- | ----------------- |
+| zip           | string     | null: false       |
+| prefecture_id | integer    | null: false       |
+| city          | string     | null: false       |
+| address       | string     | null: false       |
+| building      | string     |                   |
+| phone_no      | string     | null: false       |
+| order         | references | foreign_key: true |
 
 ### Association
 
