@@ -24,6 +24,7 @@
 | ------------------ | ---------- | ----------------- |
 | item_name          | string     | null: false       |
 | item_description   | text       | null: false       |
+| price              | string     | null: false       |
 | category_id        | integer    | null: false       |
 | condition_id       | integer    | null: false       |
 | shipping_charge_id | integer    | null: false       |
