@@ -2,16 +2,16 @@
 
 ## users table
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| email           | string | null: false |
-| password        | string | null: false |
-| nickname        | string | null: false |
-| last_name       | string | null: false |
-| first_name      | string | null: false |
-| last_name_kana  | string | null: false |
-| first_name_kana | string | null: false |
-| birthday        | string | null: false |
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| nickname           | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_name_kana     | string | null: false |
+| first_name_kana    | string | null: false |
+| birthday           | date   | null: false |
 
 ### Association
 
@@ -39,18 +39,14 @@
 
 ## orders table
 
-| Column          | Type       | Options           |
-| --------------- | ---------- | ----------------- |
-| card_no         | string     | null: false       |
-| expiration date | string     | null: false       |
-| cvc             | string     | null: false       |
-| zip             | string     | null: false       |
-| prefecture      | string     | null: false       |
-| city            | string     | null: false       |
-| address         | string     | null: false       |
-| building        | string     |                   |
-| phone_no        | string     | null: false       |
-| user            | references | foreign_key: true |
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| zip        | string | null: false |
+| prefecture | string | null: false |
+| city       | string | null: false |
+| address    | string | null: false |
+| building   | string |             |
+| phone_no   | string | null: false |
 
 ### Association
 
