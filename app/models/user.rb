@@ -5,19 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname,        presence: true
-  validates :last_name,       presence: true
-  validates :first_name,      presence: true
-  validates :last_name_kana,  presence: true
-  validates :first_name_kana, presence: true
+  validates :password,        format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は6文字以上かつ英数字をそれぞれ含めてください" }
+  validates :last_name,       presence: true, format: { with: /\A[ぁ-ゔァ-ヴ-龥々-ａ-ｚＡ-Ｚ０-９]+\z/, message: 'に全角文字を使用してください' }
+  validates :first_name,      presence: true, format: { with: /\A[ぁ-ゔァ-ヴ-龥々-ａ-ｚＡ-Ｚ０-９]+\z/, message: 'に全角文字を使用してください' }
+  validates :last_name_kana,  presence: true, format: { with: /\A[ァ-ヴ]+\z/, message: 'に全角カナを使用してください' } 
+  validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヴ]+\z/, message: 'に全角カナを使用してください' }
   validates :birthday,        presence: true
 
-
-
-  t.string :nickname,           null: false
-  t.string :last_name,          null: false
-  t.string :first_name,         null: false
-  t.string :last_name_kana,     null: false
-  t.string :first_name_kana,    null: false
-  t.date :birthday,             null: false
 
 end
