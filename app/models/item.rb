@@ -13,5 +13,6 @@ class Item < ApplicationRecord
     validates :condition
     validates :shipping_charge
     validates :prefecture
+    validates :dispatch_timing
   end
 end
