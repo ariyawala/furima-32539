@@ -8,11 +8,12 @@ class Item < ApplicationRecord
   belongs_to :shipping_charge
   belongs_to :prefecture
 
-  with_options presence: true, numericality: { other_than: 1 }
+  with_options presence: true, numericality: { other_than: 1 } do
     validates :category_id
     validates :condition
     validates :shipping_charge
     validates :prefecture
     validates :dispatch_timing
   end
+
 end

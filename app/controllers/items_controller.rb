@@ -30,4 +30,5 @@ class ItemsController < ApplicationController
       :dispatch_timing_id,
       :image
     ).merge(user_id: current_user.id)
+  end
 end
