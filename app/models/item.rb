@@ -4,6 +4,7 @@ class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+  belongs_to :condition
 
-  validates :category_id, numericality: { other_than: 1 }
+  validates :category_id,:condition,  numericality: { other_than: 1 }
 end
