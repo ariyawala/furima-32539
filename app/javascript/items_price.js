@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+function fillPrice (){
   const priceInput = document.getElementById("item-price");
   priceInput.addEventListener('input',() => {
     const inputValue = priceInput.value;
@@ -7,4 +7,5 @@ window.addEventListener('load', function(){
     const profitDom = document.getElementById("profit")
     profitDom.innerHTML = Math.floor(priceInput.value * 0.9);
   })
-})
+}
+window.addEventListener('load', fillPrice)
