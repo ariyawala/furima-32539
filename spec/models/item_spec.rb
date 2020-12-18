@@ -33,31 +33,31 @@ RSpec.describe Item, type: :model do
       end
 
       it "商品カテゴリーを選択しないと商品は保存できない" do
-        @item.category_id = "1"
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category Select")
       end
 
       it "商品状態を選択しないと商品は保存できない" do
-        @item.condition_id = "1"
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition Select")
       end
 
       it "送料負担を選択しないと商品は保存できない" do
-        @item.shipping_charge_id = "1"
+        @item.shipping_charge_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping charge Select")
       end
 
       it "発送元を選択しないと商品は保存できない" do
-        @item.prefecture_id = "1"
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture Select")
       end
 
       it "発送日数を選択しないと商品は保存できない" do
-        @item.dispatch_timing_id = "1"
+        @item.dispatch_timing_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Dispatch timing Select")
       end
