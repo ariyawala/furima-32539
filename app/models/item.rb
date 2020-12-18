@@ -21,8 +21,11 @@ class Item < ApplicationRecord
     validates :item_name
     validates :item_description
     validates :image
+    validates :price
   end
 
-  validates :price, presence: true, format: { with: /\d/, message: 'Out of setting range' }, numericality: { greater_than: 299, less_than: 10000000, message: 'Out of setting range' } 
+  validates :price, numericality: { greater_than: 299, less_than: 10000000, message: 'Out of setting range' }
+  validates :price, numericality: { with: /\A[0-9]+\z/, message: 'は半角数字で入力してください' }
+
 
 end
