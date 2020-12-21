@@ -22,6 +22,12 @@ before_action :find_item, only: [:show, :edit, :update]
   def show
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+  end
+
   def edit
     if @item.order.present? || @item.user_id != current_user.id
       redirect_to root_path
