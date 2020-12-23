@@ -9,6 +9,8 @@ class Purchase
     validates :address
     validates :phone_no, numericality: { with: /\A[0-9]+\z/, message: 'Input only number' }, length: { maximum: 11 }
     validates :token
+    validates :user_id
+    validates :item_id
   end
 
   def save
