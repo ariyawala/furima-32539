@@ -1,14 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
+  before_action :detect_item, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @purchase = Purchase.new
     redirect_to root_path if @item.order.present? || @item.user_id == current_user.id
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @purchase = Purchase.new(purchase_params)
     if @purchase.valid?
       pay_item
@@ -20,6 +19,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def detect_item
+    @item = Item.find(params[:item_id])
+  end
 
   def purchase_params
     params.require(:purchase).permit(:zip, :prefecture_id, :city, :address, :building, :phone_no, :order_id).merge(
