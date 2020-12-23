@@ -10,7 +10,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :dispatch_timing
 
-  with_options presence: true, numericality: { other_than: 1, message: 'Select'} do
+  with_options presence: true, numericality: { other_than: 1, message: 'Select' } do
     validates :category_id
     validates :condition_id
     validates :shipping_charge_id
@@ -25,8 +25,6 @@ class Item < ApplicationRecord
     validates :price
   end
 
-  validates :price, numericality: { greater_than: 299, less_than: 10000000, message: 'Out of setting range' }
+  validates :price, numericality: { greater_than: 299, less_than: 10_000_000, message: 'Out of setting range' }
   validates :price, numericality: { with: /\A[0-9]+\z/, message: 'は半角数字で入力してください' }
-
-
 end
