@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Purchase, type: :model do
   before do
-    @purchase = FactoryBot.build(:purchase)
+    sleep(0.15.second) 
+    buyer = FactoryBot.create(:user)
+    @item = FactoryBot.create(:item)
+    @purchase = FactoryBot.build(:purchase, user_id: buyer.id, item_id: @item.id)
   end
 
   describe '商品購入記録の保存' do
