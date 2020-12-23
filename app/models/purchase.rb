@@ -1,6 +1,6 @@
 class Purchase
   include ActiveModel::Model
-  attr_accessor :zip, :prefecture_id, :city, :address, :building, :phone_no, :order_id, :user_id, :item_id, :token
+  attr_accessor :zip, :prefecture_id, :city, :address, :building, :phone_no, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :zip, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' }
