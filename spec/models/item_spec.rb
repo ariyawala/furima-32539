@@ -72,6 +72,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture Select')
       end
+      
       it '発送元が空の場合商品は保存できない' do
         @item.prefecture_id = nil
         @item.valid?
