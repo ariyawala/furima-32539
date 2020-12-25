@@ -20,6 +20,7 @@
           クリックしてファイルをアップロード
         </p>
         <%= f.file_field :image, id:"item-image" %>
+        <div id="image-list"></div>
       </div>
     </div>
     <%# /出品画像 %>
@@ -109,8 +110,8 @@
           <span>販売利益</span>
           <span>
             <span id='profit'></span>円
+          </span>
         </div>
-        </span>
       </div>
     </div>
     <%# /販売価格 %>
