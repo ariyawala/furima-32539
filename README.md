@@ -65,3 +65,16 @@
 ### Association
 
 - belongs_to :order
+
+## comments table
+
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| text   | text       | null: false       |
+| user   | references | foreign_key: true |
+| item   | references | foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user
