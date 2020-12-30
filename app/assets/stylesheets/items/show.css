@@ -209,5 +209,13 @@ h4 {
 
 .comment-case {
   border: 1px solid skyblue;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+.comment-info {
+  font-size: 13px;
+  color: #2d2d2d;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
 }

@@ -95,14 +95,20 @@
     <% else %>
         <strong><p>*** コメントの投稿には新規登録/ログインが必要です ***</p></strong>
     <% end %>
-    <div class="comments">
-      <h4>- コメント一覧 -</h4>
+    <h4>- コメント一覧 -</h4>
       <% if @comments %>
+      <div class="comments", id="comments">
         <% @comments.each do |comment| %>
-          <p class="comment-case">
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", classs: "comment-name" %>:</strong>
-            <%= comment.text %>
-          </p>
+          <div class="comment-case">
+            <%# <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", classs: "comment-name":</strong> %>
+            <div class="comment-info">
+              <div>@<%= comment.user.nickname %></div>
+              <div><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></div>
+            </div>
+            <div class="comment-sentence">
+              <p><%= comment.text %></p>
+            </div>
+          </div>
         <% end %>
       <% end %>
     </div>
