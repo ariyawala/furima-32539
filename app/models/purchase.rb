@@ -3,11 +3,11 @@ class Purchase
   attr_accessor :zip, :prefecture_id, :city, :address, :building, :phone_no, :user_id, :item_id, :token
 
   with_options presence: true do
-    validates :zip, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' }
-    validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
+    validates :zip, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'はハイフンを挟んだ半角数字で入力してください' }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
     validates :city
     validates :address
-    validates :phone_no, numericality: { with: /\A[0-9]+\z/, message: 'Input only number' }, length: { maximum: 11 }
+    validates :phone_no, numericality: { with: /\A[0-9]+\z/, message: 'は半角数字で入力してください' }, length: { maximum: 11 }
     validates :token
     validates :user_id
     validates :item_id
