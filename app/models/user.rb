@@ -5,19 +5,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は6文字以上で半角英数字をそれぞれ含めてください' }
+  validates :birthday, presence: true
 
-  with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'に全角文字を使用してください' } do
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'は6文字以上で半角英数字をそれぞれ含めてください' 
+
+  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: 'に全角文字を使用してください' } do
     validates :last_name
     validates :first_name
   end
 
-  with_options presence: true, format: { with: /\A[ァ-ヴ]+\z/, message: 'に全角カナを使用してください' } do
+  with_options presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: 'に全角カナを使用してください' } do
     validates :last_name_kana
     validates :first_name_kana
   end
-
-  validates :birthday, presence: true
 
   has_many :items
   has_many :orders
