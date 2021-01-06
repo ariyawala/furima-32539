@@ -20,6 +20,11 @@ ja:
         price: 販売価格
       detail:
         age: 年齢
+        gender_id: 性別
+        genre1_id: 興味のある分野 1
+        genre2_id: 興味のある分野 2
+        genre3_id: 興味のある分野 3
+        how_id: 当サイトをお知りになった方法
 
   activemodel:
     attributes:

@@ -32,3 +32,9 @@ crumb :register do
   link "新規登録", new_user_registration_path
   parent :root
 end
+
+crumb :register2 do
+  link "詳細登録", details_path
+  parent :register
+end
+

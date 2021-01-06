@@ -1,3 +1,4 @@
+<% breadcrumb :register2 %>
 <%= render "shared/second-header"%>
 
 <%= form_for @detail, url: details_path, html: {class: 'registration-main'} do |f| %>
@@ -17,6 +18,34 @@
     </div>
     <%= f.text_area :age, class:"input-default", id:"age", placeholder:"例) 28" %>
   </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">性別</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    <div class='form-text-wrap'>
+      <label class="form-text">興味のある分野 1</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:genre1_id, Genre1.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+    <div class='form-text-wrap'>
+      <label class="form-text">興味のある分野 2</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:genre2_id, Genre2.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+    <div class='form-text-wrap'>
+      <label class="form-text">興味のある分野 3</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:genre3_id, Genre3.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+    <div class="weight-bold-text">
+      当サイトを当サイトをどこでお知りになりましたか？
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:how_id, How.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+  </div>
+  
   <div class="form-group">
     <h2 class='form-bottom-text'>
       「会員登録」のボタンを押すことにより、
