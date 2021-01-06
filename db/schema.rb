@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_29_030201) do
+ActiveRecord::Schema.define(version: 2021_01_05_132837) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,19 @@ ActiveRecord::Schema.define(version: 2020_12_29_030201) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_comments_on_item_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "age", null: false
+    t.integer "gender_id", null: false
+    t.integer "genre1_id", null: false
+    t.integer "genre2_id", null: false
+    t.integer "genre3_id", null: false
+    t.integer "how_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_details_on_user_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
