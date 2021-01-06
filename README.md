@@ -2,21 +2,38 @@
 
 ## users table
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| email              | string | null: false               |
-| encrypted_password | string | null: false, unique: true |
-| nickname           | string | null: false               |
-| last_name          | string | null: false               |
-| first_name         | string | null: false               |
-| last_name_kana     | string | null: false               |
-| first_name_kana    | string | null: false               |
-| birthday           | date   | null: false               |
+| Column             | Type   | Options                    |
+| ------------------ | ------ | -------------------------- |
+| email              | string | null: false                |
+| encrypted_password | string | null: false                |
+| nickname           | string | null: false , unique: true |
+| last_name          | string | null: false                |
+| first_name         | string | null: false                |
+| last_name_kana     | string | null: false                |
+| first_name_kana    | string | null: false                |
+| birthday           | date   | null: false                |
 
 ### Association
 
 - has_many :items
 - has_many :orders
+- has_one :detail
+
+## details table
+
+| Column    | Type       | Options           |
+| --------- | ---------- | ----------------- |
+| age       | string     | null: false       |
+| gender_id | integer    | null: false       |
+| genre1_id | integer    | null: false       |
+| genre2_id | integer    | null: false       |
+| genre3_id | integer    | null: false       |
+| how_id    | integer    | null: false       |
+| user      | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
 
 ## items table
 
