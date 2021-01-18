@@ -2,6 +2,11 @@ crumb :root do
   link "Home", root_path
 end
 
+crumb :items_new do
+  link "商品出品", new_item_path
+  parent :root
+end
+
 crumb :items_show do
   if params[:item_id].present?
     item = Item.find(params[:item_id])
