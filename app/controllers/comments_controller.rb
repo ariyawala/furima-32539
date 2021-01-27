@@ -4,10 +4,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @item = Item.find(params[:item_id])
-    if @comment.save!
+    if @comment.save
       ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname, time: @comment.created_at.strftime("%Y/%m/%d %H:%M")
     else
-      render "items/show"
+      redirect_to item_path(@item.id)
     end
   end
 
